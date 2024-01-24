@@ -17,6 +17,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/pages/api/download.js", "src/components/ui/avatar.tsx", "src/pages/api/playlist.js"],
   "exclude": ["node_modules"]
 }
