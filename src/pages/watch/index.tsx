@@ -1,13 +1,9 @@
 'use client';
-import ButtonWithTooltip from '@/components/button-with-tooltip';
 import Layout from '@/components/layout';
 import PlayList from '@/components/playlist/playlist';
-import PlayListCardSkeleton from '@/components/skeletons/playlist-card';
-import { Button } from '@/components/ui/button';
 import Comments from '@/components/watch/comments/comments';
 import TitleAndDescription from '@/components/watch/title-and-description';
 import { ChannelIdContext } from '@/context/channelId';
-import OrderByIcon from '@/icons/order-by';
 import { useSearchParams } from 'next/navigation';
 import { useContext } from 'react';
 import LiteYouTubeEmbed from 'react-lite-youtube-embed';
