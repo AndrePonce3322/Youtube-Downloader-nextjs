@@ -11,7 +11,7 @@ export default function useComments({ videoId }: { videoId: string }) {
       const data = (await res.json()) as Comments;
       setComments(data);
     })();
-  }, [videoId]);
+  }, []);
 
   return comments;
 }
