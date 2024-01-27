@@ -19,16 +19,14 @@ export default function Watch() {
       <div className='min-w-[750px] w-[750px] flex flex-col gap-3'>
         {/* Video IFRAME */}
         <div className='rounded-md relative overflow-hidden'>
-          <LiteYouTubeEmbed
-            id={id || ''}
-            poster='maxresdefault'
-            title='YouTube Embed'
-          />
+          {id ? (
+            <LiteYouTubeEmbed id={id} title='YouTube Embed' />
+          ) : (
+            <div className='w-full aspect-video bg-[#e3e3e3] dark:bg-muted animate-pulse'></div>
+          )}
         </div>
 
         {id && <TitleAndDescription id={id} />}
-
-        {/* Comments */}
         {id && <Comments videoId={id} />}
       </div>
 
