@@ -1,7 +1,7 @@
 'use client';
-
 import Card from '@/components/card/card';
 import Layout from '@/components/layout';
+import CardSkeletonList from '@/components/skeletons/card-skeleton-list';
 import { SearchVideoProps } from '@/types/search-props';
 import { useSearchParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
@@ -12,6 +12,8 @@ export default function InputSearchVideo() {
   const [videos, setVideos] = useState<SearchVideoProps>();
 
   useEffect(() => {
+    if (!search) return;
+
     (async () => {
       const res = await fetch(`/api/search?q=${search}`);
       const data = (await res.json()) as SearchVideoProps;
@@ -20,7 +22,11 @@ export default function InputSearchVideo() {
   }, [search]);
 
   if (!videos?.items)
-    return <Layout className='px-5 pt-5'>No hay videos</Layout>;
+    return (
+      <div className='px-[20px] grid md:grid-cols-3 gap-4 my-3 pb-10'>
+        <CardSkeletonList />
+      </div>
+    );
 
   return (
     <Layout title={`${search} - Youtube`}>
