@@ -1,23 +1,17 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import CommentCard from './comment-card';
 import { Comments } from '@/types/comments-props';
+import CommentCard from './comment-card';
 
-export default function CommentList({ videoId }: { videoId: string }) {
-  const [comments, setComments] = useState<Comments>();
-  useEffect(() => {
-    (async () => {
-      const res = await fetch(`/api/comments?q=${videoId}`);
-      const data = (await res.json()) as Comments;
-      console.log(data);
-      setComments(data);
-    })();
-  }, [videoId]);
+export default function CommentList({
+  comments,
+}: {
+  comments: Comments | undefined;
+}) {
+  if (!comments?.items || comments.items.length === 0)
+    return <p>Sin comentarios</p>;
 
-  if (!comments?.items) return <p>Sin comentarios</p>;
-
-  return comments.items.map((comment) => (
+  return comments.items.map((comment: any) => (
     <CommentCard
       key={comment.id}
       channelId={comment.snippet.topLevelComment.snippet.authorChannelId.value}

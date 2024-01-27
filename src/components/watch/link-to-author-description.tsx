@@ -18,7 +18,12 @@ export default function LinkToAuthorDescription({
   title,
 }: AuthorAndLikesProps) {
   return (
-    <Link href={channel_url} className='mt-7 flex gap-3 items-center'>
+    <Link
+      href={channel_url}
+      className='mt-7 flex gap-3 items-center'
+      target='_blank'
+      rel='noreferrer nofollow'
+    >
       <Image
         src={thumbnail}
         alt={title + ' thumbnail'}

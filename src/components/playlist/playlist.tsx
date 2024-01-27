@@ -3,6 +3,7 @@
 import usePlaylist from '@/hooks/usePlaylist';
 import PlayListCard from './card';
 import PlayListCardSkeleton from '../skeletons/playlist-card';
+import { ListVideo } from 'lucide-react';
 
 export default function PlayList({ channelId }: { channelId: string }) {
   const playlist = usePlaylist({ channelId });
@@ -16,6 +17,16 @@ export default function PlayList({ channelId }: { channelId: string }) {
       </div>
     );
   }
+
+  if (playlist.items.length === 0)
+    return (
+      <div className='w-full aspect-video flex items-center justify-center text-xl'>
+        <span className='flex items-center gap-1 opacity-40'>
+          <ListVideo size={22} />
+          <h1>Sin vídeos para mostrar</h1>
+        </span>
+      </div>
+    );
 
   return (
     <div className='flex flex-col gap-2'>
