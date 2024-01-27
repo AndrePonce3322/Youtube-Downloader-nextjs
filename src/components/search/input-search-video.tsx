@@ -1,11 +1,13 @@
 'use client';
 
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { FormEvent } from 'react';
 import { Input } from '../ui/input';
 
 export default function InputSearchVideo() {
   const router = useRouter();
+  const params = useSearchParams();
+  const search = params.get('q');
 
   const onHandleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -25,6 +27,7 @@ export default function InputSearchVideo() {
         placeholder='Buscar'
         className='w-[450px]'
         name='search'
+        defaultValue={search || ''}
       />
     </form>
   );
