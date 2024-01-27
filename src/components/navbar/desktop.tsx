@@ -1,11 +1,10 @@
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import YoutubeLogoIcon from '@/icons/youtube';
-import { Mic, Search } from 'lucide-react';
-import { ModeToggle } from '../dark-mode/ModeToggle';
-import { Button } from '../ui/button';
-import { Input } from '../ui/input';
+import { Mic } from 'lucide-react';
 import Link from 'next/link';
 import ButtonWithTooltip from '../button-with-tooltip';
+import { ModeToggle } from '../dark-mode/ModeToggle';
+import { Button } from '../ui/button';
 
 export default function DesktopNavbar() {
   return (
@@ -15,12 +14,10 @@ export default function DesktopNavbar() {
       </Link>
 
       <div className='flex gap-2'>
-        <Input type='search' placeholder='Buscar' className='w-[450px]' />
+        <InputSearchVideo />
 
         <ButtonWithTooltip tooltip='Realiza búsquedas con la voz'>
-          <Button size={'icon'} variant={'outline'} className='bg-muted'>
-            <Mic className='size-5' />
-          </Button>
+          <DialogDemo />
         </ButtonWithTooltip>
       </div>
 
@@ -35,5 +32,43 @@ export default function DesktopNavbar() {
         </Avatar>
       </div>
     </header>
+  );
+}
+
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from '@/components/ui/dialog';
+import InputSearchVideo from '../search/input-search-video';
+
+export function DialogDemo() {
+  return (
+    <Dialog>
+      <DialogTrigger asChild>
+        <Button size={'icon'} variant={'outline'} className='bg-muted'>
+          <Mic className='size-5' />
+        </Button>
+      </DialogTrigger>
+      <DialogContent className='sm:max-w-[425px]'>
+        <DialogHeader>
+          <DialogTitle>Realiza búsquedas con la voz</DialogTitle>
+          <DialogDescription>
+            Para realizar búsquedas por voz, ve a la configuración del navegador
+            y habilita el acceso al micrófono
+          </DialogDescription>
+        </DialogHeader>
+        {/* Contenido */}
+        <div className='flex items-center justify-center'>
+          <Button size={'default'} variant={'default'} className='mt-10 mb-10'>
+            <Mic className='size-6' />
+          </Button>
+        </div>
+        {/* /Fin del contenido */}
+      </DialogContent>
+    </Dialog>
   );
 }
