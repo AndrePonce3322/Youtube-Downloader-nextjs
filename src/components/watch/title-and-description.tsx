@@ -1,13 +1,16 @@
 'use client';
 
 import useVideoDetails from '@/hooks/useVideoDetails';
+import Head from 'next/head';
 import SkeletonWatchPage from '../skeletons/watch-page';
+import VideoNotFound from '../video-not-found';
 import AuthorAndLikes from './author-and-likes';
 import Description from './description';
-import Head from 'next/head';
 
 export default function TitleAndDescription({ id }: { id: string }) {
   const video = useVideoDetails({ id });
+
+  if (video?.error) return <VideoNotFound />;
   if (!video?.title) return <SkeletonWatchPage />;
 
   return (

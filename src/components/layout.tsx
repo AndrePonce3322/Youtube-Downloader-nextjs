@@ -14,9 +14,8 @@ export default function Layout({
 }) {
   return (
     <>
-      <DesktopNavbar />
       <Head>
-        <title>{title}</title>
+        <title>{title || 'Youtube Downloader'}</title>
         <meta name='description' content={description} />
       </Head>
       <main className={className}>{children}</main>

@@ -1,17 +1,8 @@
 'use client';
-import { Youtube } from '@/types/youtube-videos-props';
-import { useEffect, useState } from 'react';
+import { VideosContext } from '@/context/videos';
+import { useContext } from 'react';
 
 export default function useVideos() {
-  const [videos, setVideos] = useState<Youtube>();
-
-  useEffect(() => {
-    (async () => {
-      const res = await fetch('/api/videos');
-      const data = await res.json();
-      setVideos(data);
-    })();
-  }, []);
-
+  const { videos } = useContext(VideosContext);
   return videos;
 }

@@ -22,10 +22,17 @@ export default function CommentCard({
 }: CommentCardProps) {
   return (
     <div className='flex gap-3'>
-      <Avatar className='size-11'>
-        <AvatarImage src={thumbnail} alt={`@${username}`} />
-        <AvatarFallback>YT</AvatarFallback>
-      </Avatar>
+      <Link
+        className='flex gap-2 group'
+        rel='nofollow noopener noreferrer'
+        href={`https://www.youtube.com/channel/${channelId}`}
+        target='_blank'
+      >
+        <Avatar className='size-11'>
+          <AvatarImage src={thumbnail} alt={`@${username}`} />
+          <AvatarFallback>YT</AvatarFallback>
+        </Avatar>
+      </Link>
 
       <div className='flex flex-col text-sm relative gap-1'>
         <Link
