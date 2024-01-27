@@ -1,13 +1,13 @@
 'use client';
+
 import useVideos from '@/hooks/useVideos';
 import Card from './card/card';
-import CardSkeleton from './skeletons/card-skeleton';
+import CardSkeletonList from './skeletons/card-skeleton-list';
 
 export default function VideoList() {
   const videos = useVideos();
 
-  if (!videos)
-    return Array.from({ length: 7 }).map((_, i) => <CardSkeleton key={i} />);
+  if (!videos) return <CardSkeletonList />;
 
   return videos.items.map((video) => (
     <Card
