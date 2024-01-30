@@ -46,9 +46,9 @@ export default function CommentCard({
           </Link>
           <CardTimeAgo time={publishDate} />
         </div>
-        <p className='font-sans text-pretty text-sm md:text-[15px] '>
+        <pre className='font-sans text-pretty text-sm md:text-[15px]'>
           {comment}
-        </p>
+        </pre>
 
         <div className='mt-1 md:mt-3 text-base flex gap-2'>
           <LikeButtons countLikes={Number(likeCount)} marginLeft />

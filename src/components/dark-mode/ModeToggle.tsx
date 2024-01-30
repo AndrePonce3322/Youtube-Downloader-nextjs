@@ -2,9 +2,9 @@
 
 import { Moon, Sun } from 'lucide-react';
 import { useTheme } from 'next-themes';
-import Head from 'next/head';
 
 import { Button } from '@/components/ui/button';
+import Head from 'next/head';
 import { cn } from '@/lib/utils';
 
 export function ModeToggle() {
@@ -12,12 +12,12 @@ export function ModeToggle() {
 
   return (
     <>
-      {/* <Head>
+      <Head>
         <meta
           name='theme-color'
-          content={cn(theme === 'light' ? '#fff' : '#000')}
+          content={cn(theme === 'light' ? '#FAFAFA' : '#09090b')}
         ></meta>
-      </Head> */}
+      </Head>
 
       <Button
         variant='outline'

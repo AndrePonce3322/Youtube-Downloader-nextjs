@@ -1,7 +1,8 @@
 import YoutubeLogoIcon from '@/icons/youtube';
+import { SearchIcon } from 'lucide-react';
 import Link from 'next/link';
 import { ModeToggle } from '../dark-mode/ModeToggle';
-import { Avatar, AvatarFallback, AvatarImage } from '../ui/avatar';
+import { Button } from '../ui/button';
 
 export default function MobileNavbar() {
   return (
@@ -10,15 +11,11 @@ export default function MobileNavbar() {
         <YoutubeLogoIcon className='h-5 fill-current' />
       </Link>
 
-      <div className='flex gap-4'>
+      <div className='flex gap-1'>
+        <Button size={'icon'}>
+          <SearchIcon className='h-5' />
+        </Button>
         <ModeToggle />
-        <Avatar>
-          <AvatarImage
-            src='https://github.com/andreponce3322.png'
-            alt='@andreponce3322'
-          />
-          <AvatarFallback>AP</AvatarFallback>
-        </Avatar>
       </div>
     </header>
   );
