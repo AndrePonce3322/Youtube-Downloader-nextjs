@@ -21,35 +21,37 @@ export default function CommentCard({
   channelId,
 }: CommentCardProps) {
   return (
-    <div className='flex gap-3'>
+    <div className='flex gap-2 md:gap-3 overflow-hidden'>
       <Link
         className='flex gap-2 group'
         rel='nofollow noopener noreferrer'
         href={`https://www.youtube.com/channel/${channelId}`}
         target='_blank'
       >
-        <Avatar className='size-11'>
+        <Avatar className='size-9 md:size-11'>
           <AvatarImage src={thumbnail} alt={`@${username}`} />
           <AvatarFallback>YT</AvatarFallback>
         </Avatar>
       </Link>
 
-      <div className='flex flex-col text-sm relative gap-1'>
-        <Link
-          className='flex gap-2 group'
-          rel='nofollow noopener noreferrer'
-          href={`https://www.youtube.com/channel/${channelId}`}
-          target='_blank'
-        >
-          <span className='font-medium group-hover:underline'>{username}</span>
+      <div className='flex flex-col text-xs md:text-sm relative gap-1'>
+        <div className='flex gap-2'>
+          <Link
+            href={`https://www.youtube.com/channel/${channelId}`}
+            className='font-medium  hover:underline'
+            target='_blank'
+            rel='nofollow noopener noreferrer'
+          >
+            {username}
+          </Link>
           <CardTimeAgo time={publishDate} />
-        </Link>
-        <pre className='font-sans text-pretty text-[15px] break-words'>
+        </div>
+        <p className='font-sans text-pretty text-sm md:text-[15px] '>
           {comment}
-        </pre>
+        </p>
 
-        <div className='mt-3 text-base flex gap-2'>
-          <LikeButtons countLikes={Number(likeCount)} />
+        <div className='mt-1 md:mt-3 text-base flex gap-2'>
+          <LikeButtons countLikes={Number(likeCount)} marginLeft />
         </div>
       </div>
     </div>

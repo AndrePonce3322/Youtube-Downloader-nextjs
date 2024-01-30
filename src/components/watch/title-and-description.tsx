@@ -15,13 +15,15 @@ export default function TitleAndDescription({ id }: { id: string }) {
 
   return (
     video.title && (
-      <article className='flex flex-col gap-3'>
+      <article className='flex flex-col gap-2 md:gap-3 px-3 md:px-0'>
         <Head>
           <title>{video.title}</title>
         </Head>
 
         {/* Title */}
-        <h3 className='text-xl line-clamp-2 font-medium'>{video.title}</h3>
+        <h3 className='text-lg md:text-xl line-clamp-2 font-medium'>
+          {video.title}
+        </h3>
 
         {/* Author and likes */}
         <AuthorAndLikes

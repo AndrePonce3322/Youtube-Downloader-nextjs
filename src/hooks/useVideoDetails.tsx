@@ -16,7 +16,7 @@ export default function useVideoDetails({ id }: { id: string }) {
       if (!channelId) setChannelId(data.author.id);
       setVideo({ ...data, error: false });
     })();
-  }, []);
+  }, [id]);
 
   return video;
 }

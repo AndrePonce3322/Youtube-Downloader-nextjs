@@ -7,7 +7,8 @@ const inter = Inter({ subsets: ['latin'] });
 export default function Home() {
   return (
     <Layout className={`${inter.className} flex flex-col relative`}>
-      <div className='px-[20px] grid md:grid-cols-3 gap-4 my-3 pb-10'>
+
+      <div className='md:px-[20px] grid md:grid-cols-3 gap-8 md:gap-4 md:my-3 pb-10'>
         <VideoList />
       </div>
     </Layout>

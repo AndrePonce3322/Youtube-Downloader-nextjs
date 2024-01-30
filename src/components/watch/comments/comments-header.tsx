@@ -4,8 +4,8 @@ import OrderByIcon from '@/icons/order-by';
 
 export default function CommentsHeader({ commentsLength }: { commentsLength: number }) {
   return (
-    <header className='flex gap-3'>
-      <h1 className='text-[22px] font-semibold'>
+    <header className='flex gap-3 justify-between md:justify-normal'>
+      <h1 className='text-lg md:text-[22px] font-semibold'>
         {commentsLength} comentarios
       </h1>
       <ButtonWithTooltip tooltip='Ordenar comentarios'>
