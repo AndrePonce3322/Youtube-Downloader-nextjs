@@ -15,7 +15,7 @@ export function ModeToggle() {
       <Head>
         <meta
           name='theme-color'
-          content={cn(theme === 'light' ? '#FAFAFA' : '#09090b')}
+          content={cn(theme === 'light' ? '#FAFAFA' : '#0f0f0f')}
         ></meta>
       </Head>
 
