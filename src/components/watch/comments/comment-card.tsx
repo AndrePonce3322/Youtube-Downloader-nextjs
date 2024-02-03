@@ -21,7 +21,7 @@ export default function CommentCard({
   channelId,
 }: CommentCardProps) {
   return (
-    <div className='flex gap-2 md:gap-3 '>
+    <div className='flex gap-2 md:gap-3' style={{ wordBreak: 'break-word' }}>
       <Link
         className='flex gap-2 group'
         rel='nofollow noopener noreferrer'
