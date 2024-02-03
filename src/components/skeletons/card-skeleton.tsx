@@ -1,6 +1,6 @@
 export default function CardSkeleton() {
   return (
-    <div className='flex flex-col gap-2 group transition duration-300 active:bg-[#e3e3e3]/10 md:p-1 rounded-md'>
+    <div className='flex flex-col gap-2 group transition duration-300 active:bg-[#e3e3e3]/10 md:p-1 md:rounded-md'>
       <div className='h-[225px] w-full rounded-md flex flex-col relative overflow-hidden bg-[#e3e3e3] dark:bg-muted animate-pulse'></div>
 
       <div className='flex gap-2 px-2 md:px-0 mt-1 md:mt-0'>

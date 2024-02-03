@@ -23,14 +23,14 @@ export default function InputSearchVideo() {
 
   if (!videos?.items)
     return (
-      <div className='px-[20px] grid md:grid-cols-3 gap-4 my-3 pb-10'>
+      <div className='md:px-[20px] grid md:grid-cols-3 gap-4 my-3 pb-10'>
         <CardSkeletonList />
       </div>
     );
 
   return (
     <Layout title={`${search} - Youtube`}>
-      <div className='px-[20px] grid md:grid-cols-3 gap-4 my-3 pb-10'>
+      <section className='md:px-[20px] grid md:grid-cols-3 gap-8 md:gap-4 md:my-3 pb-10'>
         {videos?.items.map((video) => (
           <Card
             author={video.snippet.channelTitle}
@@ -43,7 +43,7 @@ export default function InputSearchVideo() {
             key={video.id.videoId}
           />
         ))}
-      </div>
+      </section>
     </Layout>
   );
 }

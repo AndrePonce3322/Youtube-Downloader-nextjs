@@ -19,7 +19,7 @@ export default function PlayListCard({
   publishDate,
 }: PlayListCardProps) {
   return (
-    <Link className='flex gap-2 group' href={`/watch?v=${videoId}`}>
+    <Link className='flex gap-2 group' href={`/watch?v=${videoId}`} title={title}>
       <div className='w-40 aspect-video relative' style={{ minWidth: '10rem' }}>
         <Image
           src={thumbnail}

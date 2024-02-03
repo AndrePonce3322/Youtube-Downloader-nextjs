@@ -23,7 +23,7 @@ export default function DesktopNavbar() {
 
       <div className='flex gap-4'>
         <ModeToggle />
-        <Avatar >
+        <Avatar>
           <AvatarImage
             src='https://github.com/andreponce3322.png'
             alt='@andreponce3322'

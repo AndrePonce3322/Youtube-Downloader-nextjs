@@ -21,7 +21,7 @@ export default function CommentCard({
   channelId,
 }: CommentCardProps) {
   return (
-    <div className='flex gap-2 md:gap-3 overflow-hidden'>
+    <div className='flex gap-2 md:gap-3 '>
       <Link
         className='flex gap-2 group'
         rel='nofollow noopener noreferrer'

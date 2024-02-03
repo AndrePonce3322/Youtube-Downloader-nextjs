@@ -15,15 +15,23 @@ export default async function handler(req, res) {
     res.setHeader('Content-Type', 'video/mp4');
   }
 
-  // // Downloader
-  ytdl(url, {
+  // // Get the length of the video
+  let length = 0;
+
+  await ytdl.getInfo(url).then((info) => {
+    length = ytdl.chooseFormat(info.formats, {
+      quality,
+      filter,
+    }).contentLength;
+  });
+
+  console.log('Length: ', length);
+  res.setHeader('Content-Length', length);
+
+  return ytdl(url, {
     filter,
     quality,
   })
-    .on('progress', (chunkLength, downloaded, total) => {
-      const percent = downloaded / total;
-      console.log((percent * 100).toFixed(2) + '%');
-    })
     .on('end', () => {
       console.log('Downloaded finished');
     })

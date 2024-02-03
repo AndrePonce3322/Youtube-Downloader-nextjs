@@ -41,8 +41,8 @@ export default function LikeButtons({
   return (
     <div
       className={cn(
-        'flex bg-[#f2f2f2] dark:bg-[#272727] md:bg-transparent md:dark:bg-transparent rounded-md',
-        marginLeft && 'md:-ml-3',
+        'flex bg-[#f2f2f2] dark:bg-[#272727]  rounded-md',
+        marginLeft && 'md:-ml-3 md:bg-transparent md:dark:bg-transparent'
       )}
     >
       <ButtonWithTooltip tooltip='Me gusta'>
