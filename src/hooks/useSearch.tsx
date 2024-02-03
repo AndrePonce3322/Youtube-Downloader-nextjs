@@ -12,7 +12,7 @@ export default function useSearch({ search }: { search: string | null }) {
       const data = (await res.json()) as SearchVideoProps;
       setVideos(data);
     })();
-  }, []);
+  }, [search]);
 
   return videos;
 }
