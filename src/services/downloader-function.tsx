@@ -14,7 +14,7 @@ export const download = async ({ url, filter, quality }: Requirements) => {
   const blobUrl = window.URL.createObjectURL(blob);
   const a = document.createElement('a');
   a.href = blobUrl;
-  a.download = 'audio.mp3';
+  a.download = 'video.mp4';
   document.body.appendChild(a);
   a.click();
   a.remove();
