@@ -25,7 +25,7 @@ export default function Description({
   title,
 }: VideoDescriptionProps) {
   return (
-    <div className='w-full rounded-md bg-[#f2f2f2] dark:bg-[#272727] p-2 relative pb-8'>
+    <div className='w-full rounded-md bg-[#f2f2f2] dark:bg-[#272727] p-2 relative pb-8 mt-2 md:mt-1'>
       <ViewsAndPublished publishDate={publishDate} viewCount={viewCount} />
       <ContentDescription description={description} />
       <LinkToAuthorDescription

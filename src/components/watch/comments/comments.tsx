@@ -12,12 +12,12 @@ export default function Comments({ videoId }: { videoId: string }) {
     return Array.from({ length: 7 }).map((_, i) => <CardSkeleton key={i} />);
 
   return (
-    <section className='flex flex-col gap-5'>
+    <section className='flex flex-col gap-5 px-3 md:px-0'>
       {comments?.items && (
         <CommentsHeader commentsLength={comments.items.length} />
       )}
 
-      <div className='w-full flex flex-col gap-10'>
+      <div className='w-full flex flex-col gap-10 '>
         {videoId && comments?.items && <CommentList comments={comments} />}
       </div>
     </section>

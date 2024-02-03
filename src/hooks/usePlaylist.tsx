@@ -18,7 +18,7 @@ export default function usePlaylist({ channelId }: { channelId: string }) {
 
       setPlaylist({ videoId, ...data });
     })();
-  }, []);
+  }, [channelId]);
 
   return playlist;
 }

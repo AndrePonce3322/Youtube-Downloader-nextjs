@@ -32,7 +32,7 @@ export default function LinkToAuthorDescription({
         className='rounded-full'
       ></Image>
       <div className='flex flex-col'>
-        <h2 className='text-xl font-medium'>{authorName}</h2>
+        <h2 className='md:text-xl font-medium'>{authorName}</h2>
         <span className='text-sm'>{formatSubscribers(subscriber_count)}</span>
       </div>
     </Link>

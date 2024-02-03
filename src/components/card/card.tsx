@@ -1,12 +1,12 @@
 'use client';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { ChannelIdContext } from '@/context/channelId';
 import { formatViews } from '@/services/formatView';
 import Image from 'next/image';
 import Link from 'next/link';
-import CardTimeAgo from './timeago';
 import { useContext } from 'react';
-import { ChannelIdContext } from '@/context/channelId';
 import ButtonWithTooltip from '../button-with-tooltip';
+import CardTimeAgo from './timeago';
 
 export default function Card({
   id,
@@ -37,10 +37,10 @@ export default function Card({
       onClick={() => {
         handleClick();
       }}
-      className='flex flex-col gap-2 group transition duration-300 active:bg-gray-500/10 p-1 rounded-md'
+      className='flex flex-col gap-3 md:gap-2 group transition duration-300 active:bg-gray-500/10 md:p-1 rounded-md'
       href={`/watch?v=${id}`}
     >
-      <div className='h-[225px] w-full rounded-md flex flex-col relative overflow-hidden'>
+      <div className='h-[225px] w-full md:rounded-md flex flex-col relative overflow-hidden'>
         <Image
           alt={title}
           fill
@@ -50,18 +50,22 @@ export default function Card({
         />
       </div>
 
-      <div className='flex gap-2'>
+      <div className='flex gap-2 px-2 md:px-0'>
         <Avatar>
           <AvatarImage src={src} alt='@shadcn' />
           <AvatarFallback>CN</AvatarFallback>
         </Avatar>
 
         {/* Title and author */}
-        <div className='flex flex-col gap-1'>
-          <h4 className='font-medium line-clamp-2' title={title}>
+        <div className='flex flex-col md:gap-1'>
+          <h4
+            className='font-medium line-clamp-2 text-sm md:text-base'
+            title={title}
+          >
             {title}
           </h4>
-          <div className='flex flex-col text-sm text-muted-foreground'>
+          {/* Author */}
+          <div className='flex flex-col text-xs md:text-sm text-muted-foreground'>
             <div>
               <ButtonWithTooltip tooltip={author}>
                 <Link
@@ -77,7 +81,7 @@ export default function Card({
               </ButtonWithTooltip>
             </div>
             {/* Views and time */}
-            <div className='flex gap-1 text-sm'>
+            <div className='flex gap-1 md:text-sm'>
               <span>{vistas}</span>
               <span>&#183;</span>
               <CardTimeAgo time={time} />

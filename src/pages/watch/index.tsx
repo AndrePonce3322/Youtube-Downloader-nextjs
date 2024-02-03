@@ -15,10 +15,10 @@ export default function Watch() {
   const id = watch.get('v');
 
   return (
-    <Layout className='flex relative px-[80px] gap-4 pt-5 pb-10'>
-      <div className='min-w-[750px] w-[750px] flex flex-col gap-3'>
+    <Layout className='flex md:flex-row flex-col relative md:px-[80px] gap-4 md:pt-5 pb-10'>
+      <div className='w-full md:min-w-[750px] md:w-[750px] flex flex-col gap-3'>
         {/* Video IFRAME */}
-        <div className='rounded-md relative overflow-hidden'>
+        <div className='md:rounded-md relative overflow-hidden'>
           {id ? (
             <LiteYouTubeEmbed id={id} title='YouTube Embed' />
           ) : (

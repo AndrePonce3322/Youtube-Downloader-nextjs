@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import DesktopNavbar from './navbar/desktop';
 
 export default function Layout({
   children,
