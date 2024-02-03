@@ -18,15 +18,20 @@ export default async function handler(req, res) {
   // // Get the length of the video
   let length = 0;
 
-  await ytdl.getInfo(url).then((info) => {
+  const info = await ytdl.getInfo(url).then((info) => {
     length = ytdl.chooseFormat(info.formats, {
       quality,
       filter,
     }).contentLength;
   });
 
-  console.log('Length: ', length);
-  res.setHeader('Content-Length', length);
+  if (info) {
+    res.setHeader('Content-Length', length);
+  } else {
+    res.setHeader('Content-Length', 0);
+  }
+
+  console.log('Content-Length:', length);
 
   return ytdl(url, {
     filter,

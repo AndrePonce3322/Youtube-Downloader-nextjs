@@ -12,6 +12,7 @@ interface AuthorAndLikesProps {
   subscriber_count: number;
   thumbnail: string;
   videoId: string;
+  videoTitle: string;
 }
 
 export default function AuthorAndLikes({
@@ -20,6 +21,7 @@ export default function AuthorAndLikes({
   subscriber_count,
   thumbnail,
   videoId,
+  videoTitle,
 }: AuthorAndLikesProps) {
   return (
     <div className='flex justify-between flex-col gap-5 md:items-center md:flex-row mt-2 md:mt-0'>
@@ -49,7 +51,7 @@ export default function AuthorAndLikes({
       {/* Likes and Download Button*/}
       <div className='flex md:gap-2 gap-4'>
         <LikeButtons />
-        <DownloadButton videoId={videoId} />
+        <DownloadButton videoId={videoId} musicName={videoTitle} />
       </div>
     </div>
   );

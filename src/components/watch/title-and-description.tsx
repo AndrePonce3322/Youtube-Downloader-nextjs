@@ -32,6 +32,7 @@ export default function TitleAndDescription({ id }: { id: string }) {
           subscriber_count={video.author.subscriber_count}
           thumbnail={video.author.thumbnails[1].url}
           videoId={id}
+          videoTitle={video.title}
         />
 
         <Description

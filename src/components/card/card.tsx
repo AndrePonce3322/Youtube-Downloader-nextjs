@@ -52,8 +52,8 @@ export default function Card({
 
       <div className='flex gap-2 px-2 md:px-0'>
         <Avatar>
-          <AvatarImage src={src} alt='@shadcn' />
-          <AvatarFallback>CN</AvatarFallback>
+          <AvatarImage src={src} alt='@andreponce3322' />
+          <AvatarFallback>YT</AvatarFallback>
         </Avatar>
 
         {/* Title and author */}
