@@ -89,18 +89,3 @@
   background-clip: padding-box;
   border-radius: 9999px;
 }
-
-.size-8 {
-  height: 2rem;
-  width: 2rem;
-}
-
-.size-11 {
-  height: 2.75rem /* 44px */;
-  width: 2.75rem /* 44px */;
-}
-
-.size-9 {
-  height: 2.25rem /* 36px */;
-  width: 2.25rem /* 36px */;
-}
