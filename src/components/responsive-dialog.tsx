@@ -158,7 +158,7 @@ export function DrawerDialogDemo({
             </div>
 
             {length !== 0 && (
-              <span className='text-black'>
+              <span className='text-black dark:text-white'>
                 Tamaño de archivo: {(length / 1000000).toFixed(1)}MB
               </span>
             )}
@@ -217,7 +217,7 @@ export function DrawerDialogDemo({
           </div>
 
           {length !== 0 && (
-            <span className='text-black'>
+            <span className='text-black dark:text-white'>
               Tamaño de archivo: {(length / 1000000).toFixed(1)}MB
             </span>
           )}
