@@ -1,13 +1,14 @@
 'use client';
+
 import { progress$ } from '@/services/downloader-function';
 import { useEffect, useState } from 'react';
 
-export default function useProgress() {
+export const useProgress = () => {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    const subscription = progress$.subscribe((percent) => {
-      setProgress(percent);
+    const subscription = progress$.subscribe((value) => {
+      setProgress(value);
     });
 
     return () => {
@@ -16,4 +17,4 @@ export default function useProgress() {
   }, [progress]);
 
   return progress;
-}
+};

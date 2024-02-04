@@ -13,7 +13,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <ThemeProvider attribute='class' defaultTheme='light' enableSystem>
         <MobileNavbar />
         <DesktopNavbar />
-        <Toaster position='top-center' theme='system'/>
+        <Toaster position='top-right' />
         <VideosProvider>
           <ChannelIdProvider>
             <Component {...pageProps} />

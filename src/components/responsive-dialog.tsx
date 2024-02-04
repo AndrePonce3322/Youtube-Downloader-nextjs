@@ -26,13 +26,12 @@ import { Download } from 'lucide-react';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { download } from '@/services/downloader-function';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { toast } from 'sonner';
 
 import confetti from 'canvas-confetti';
-
-import { progress$ } from '@/services/downloader-function';
-import useProgress from '@/hooks/useProgress';
+import { useProgress } from '@/hooks/useProgress';
+import { useLength } from '@/hooks/useLength';
 
 export function DrawerDialogDemo({
   videoId,
@@ -43,6 +42,8 @@ export function DrawerDialogDemo({
 }) {
   const [open, setOpen] = useState(false);
   const isDesktop = useMediaQuery('(min-width: 768px)');
+  const progress = useProgress();
+
   const [downloadType, setDownloadType] = useState<any>({
     filter: 'audioonly',
     quality: 'highest',
@@ -54,7 +55,7 @@ export function DrawerDialogDemo({
       musicName,
       filter: downloadType.filter,
       quality: downloadType.quality,
-      url: `https://www.youtube.com/watch?v=${videoId}`,
+      url: videoId,
       format: downloadType.format,
     });
 

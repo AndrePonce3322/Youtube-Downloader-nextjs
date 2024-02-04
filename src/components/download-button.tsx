@@ -1,4 +1,3 @@
-'use client';
 import { DrawerDialogDemo } from './responsive-dialog';
 
 interface DownloadButtonProps {
