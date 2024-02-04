@@ -144,6 +144,21 @@ export function DrawerDialogDemo({
               Descargar {progress !== 0 && `- ${progress}%`}
             </Button>
           </DialogFooter>
+
+          <div className='text-sm text-muted-foreground flex justify-between w-full mt-1'>
+            <div>
+              Creador por{' '}
+              <Link href={'https://andrepg.vercel.app'} className='underline'>
+                @andreponce
+              </Link>
+            </div>
+
+            {length !== 0 && (
+              <span className='text-black'>
+                Tamaño de archivo: {(length / 1000000).toFixed(1)}MB
+              </span>
+            )}
+          </div>
         </DialogContent>
       </Dialog>
     );
