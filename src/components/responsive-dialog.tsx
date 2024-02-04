@@ -148,7 +148,11 @@ export function DrawerDialogDemo({
           <div className='text-sm text-muted-foreground flex justify-between w-full mt-1'>
             <div>
               Creador por{' '}
-              <Link href={'https://andrepg.vercel.app'} className='underline'>
+              <Link
+                href={'https://andrepg.vercel.app'}
+                className='underline'
+                target='_blank'
+              >
                 @andreponce
               </Link>
             </div>
@@ -203,7 +207,11 @@ export function DrawerDialogDemo({
         <div className='absolute bottom-4 px-4 text-sm text-muted-foreground flex justify-between w-full'>
           <div>
             Creador por{' '}
-            <Link href={'https://andrepg.vercel.app'} className='underline'>
+            <Link
+              href={'https://andrepg.vercel.app'}
+              className='underline'
+              target='_blank'
+            >
               @andreponce
             </Link>
           </div>
