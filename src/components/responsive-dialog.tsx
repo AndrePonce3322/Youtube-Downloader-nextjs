@@ -147,7 +147,7 @@ export function DrawerDialogDemo({
 
           <div className='text-sm text-muted-foreground flex justify-between w-full mt-1'>
             <div>
-              Creador por{' '}
+              Creado por{' '}
               <Link
                 href={'https://andrepg.vercel.app'}
                 className='underline'
@@ -204,9 +204,9 @@ export function DrawerDialogDemo({
           </DialogFooter>
         </div>
 
-        <div className='absolute bottom-4 px-4 text-sm text-muted-foreground flex justify-between w-full'>
+        <div className='absolute bottom-4 px-4 text-xs text-muted-foreground flex justify-between w-full'>
           <div>
-            Creador por{' '}
+            Creado por{' '}
             <Link
               href={'https://andrepg.vercel.app'}
               className='underline'
