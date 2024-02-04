@@ -2,7 +2,7 @@ import ytdl from 'ytdl-core';
 
 export default async function handler(req, res) {
   const requirements = req.body;
-  console.log(requirements);
+  console.log({ requirements });
   const { url, filter, quality } = requirements;
 
   if (!url || !filter || !quality)
@@ -25,8 +25,11 @@ export default async function handler(req, res) {
     }).contentLength;
   });
 
-  console.log('Length: ', length);
-  res.setHeader('Content-Length', length);
+  try {
+    res.setHeader('Content-Length', length);
+  } catch (error) {
+    console.log('Error setting content length', error);
+  }
 
   return ytdl(url, {
     filter,
