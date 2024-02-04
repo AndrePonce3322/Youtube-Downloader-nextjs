@@ -29,8 +29,9 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { toast } from 'sonner';
 
-import confetti from 'canvas-confetti';
 import { useProgress } from '@/hooks/useProgress';
+import confetti from 'canvas-confetti';
+
 import { useLength } from '@/hooks/useLength';
 
 export function DrawerDialogDemo({
@@ -43,6 +44,7 @@ export function DrawerDialogDemo({
   const [open, setOpen] = useState(false);
   const isDesktop = useMediaQuery('(min-width: 768px)');
   const progress = useProgress();
+  const length = useLength();
 
   const [downloadType, setDownloadType] = useState<any>({
     filter: 'audioonly',
@@ -51,6 +53,14 @@ export function DrawerDialogDemo({
   });
 
   const handleOnClick = async () => {
+    console.log({
+      musicName,
+      filter: downloadType.filter,
+      quality: downloadType.quality,
+      url: videoId,
+      format: downloadType.format,
+    });
+
     const res = download({
       musicName,
       filter: downloadType.filter,
@@ -90,12 +100,12 @@ export function DrawerDialogDemo({
         format: 'mp3',
       },
       'video-high': {
-        filter: 'audioandvideo',
+        filter: 'videoandaudio',
         quality: 'highest',
         format: 'mp4',
       },
       'video-low': {
-        filter: 'audioandvideo',
+        filter: 'videoandaudio',
         quality: 'lowest',
         format: 'mp4',
       },
@@ -131,7 +141,7 @@ export function DrawerDialogDemo({
               </Button>
             </DialogClose>
             <Button type='submit' onClick={handleOnClick}>
-              Descargar
+              Descargar {progress !== 0 && `- ${progress}%`}
             </Button>
           </DialogFooter>
         </DialogContent>
@@ -170,16 +180,24 @@ export function DrawerDialogDemo({
               Cancelar
             </Button>
             <Button type='submit' onClick={handleOnClick}>
-              Descargar
+              Descargar {progress !== 0 && `- ${progress}%`}
             </Button>
           </DialogFooter>
         </div>
 
-        <div className='absolute bottom-4 left-4 text-sm text-muted-foreground'>
-          Creador por{' '}
-          <Link href={'https://andrepg.vercel.app'} className='underline'>
-            @andreponce
-          </Link>
+        <div className='absolute bottom-4 px-4 text-sm text-muted-foreground flex justify-between w-full'>
+          <div>
+            Creador por{' '}
+            <Link href={'https://andrepg.vercel.app'} className='underline'>
+              @andreponce
+            </Link>
+          </div>
+
+          {length !== 0 && (
+            <span className='text-black'>
+              Tamaño de archivo: {(length / 1000000).toFixed(1)}MB
+            </span>
+          )}
         </div>
       </DrawerContent>
     </Drawer>

@@ -44,9 +44,12 @@ export const download = async ({
     document.body.appendChild(a);
     a.click();
     a.remove();
-    window.URL.revokeObjectURL(blobUrl);
     progress$.next(0);
+    length$.next(0);
+    window.URL.revokeObjectURL(blobUrl);
   } catch (error) {
+    progress$.next(0);
+    length$.next(0);
     console.error('Error:', error);
   }
 };
