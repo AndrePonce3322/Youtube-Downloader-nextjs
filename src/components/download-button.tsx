@@ -1,14 +1,17 @@
-'use client';
 import { DrawerDialogDemo } from './responsive-dialog';
 
 interface DownloadButtonProps {
   videoId: string;
+  musicName: string;
 }
 
-export default function DownloadButton({ videoId }: DownloadButtonProps) {
+export default function DownloadButton({
+  videoId,
+  musicName,
+}: DownloadButtonProps) {
   return (
     <>
-      <DrawerDialogDemo videoId={videoId} />
+      <DrawerDialogDemo videoId={videoId} musicName={musicName} />
     </>
   );
 }

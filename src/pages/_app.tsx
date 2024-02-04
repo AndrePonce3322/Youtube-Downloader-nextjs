@@ -5,6 +5,7 @@ import ChannelIdProvider from '@/context/channelId';
 import VideosProvider from '@/context/videos';
 import '@/styles/globals.css';
 import type { AppProps } from 'next/app';
+import { Toaster } from 'sonner';
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -12,6 +13,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <ThemeProvider attribute='class' defaultTheme='light' enableSystem>
         <MobileNavbar />
         <DesktopNavbar />
+        <Toaster position='top-right' />
         <VideosProvider>
           <ChannelIdProvider>
             <Component {...pageProps} />
