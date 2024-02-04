@@ -24,8 +24,8 @@ export default function Layout({
           property='og:image'
           content='https://youtube-hn.vercel.app/icon.png'
         />
-        <meta property='og:image:height' content='400' />
-        <meta property='og:image:width' content='800' />
+        <meta property='og:image:height' content='600' />
+        <meta property='og:image:width' content='1200' />
         <meta property='og:title' content='Youtube Downloader' />
         <meta
           property='og:description'
