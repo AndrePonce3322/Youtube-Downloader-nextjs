@@ -4,18 +4,19 @@ export default function Layout({
   children,
   className,
   title,
-  description,
 }: {
   children: React.ReactNode;
   className?: string;
   title?: string;
-  description?: string;
 }) {
   return (
     <>
       <Head>
         <title>{title || 'Youtube Downloader'}</title>
-        <meta name='description' content={description} />
+        <meta
+          name='description'
+          content='Descarga tus videos favoritos con Youtube Downloader, fácil, rápido y accesible. creada por andrepg.vercel.app'
+        />
       </Head>
       <main className={className}>{children}</main>
     </>
