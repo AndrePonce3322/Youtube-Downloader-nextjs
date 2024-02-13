@@ -2,7 +2,6 @@
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { ChannelIdContext } from '@/context/channelId';
 import { formatViews } from '@/services/formatView';
-import Image from 'next/image';
 import Link from 'next/link';
 import { useContext } from 'react';
 import ButtonWithTooltip from '../button-with-tooltip';
@@ -41,12 +40,11 @@ export default function Card({
       href={`/watch?v=${id}`}
     >
       <div className='h-[225px] w-full md:rounded-md flex flex-col relative overflow-hidden'>
-        <Image
+        <img
           alt={title}
-          fill
           src={src}
           sizes='(max-width: 768px) 100vw, 33vw'
-          className='object-cover group-hover:scale-105 transition duration-300 ease-in-out'
+          className='object-cover group-hover:scale-105 transition duration-300 ease-in-out w-full h-full'
         />
       </div>
 

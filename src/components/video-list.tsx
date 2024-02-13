@@ -1,4 +1,5 @@
 'use client';
+
 import { VideosContext } from '@/context/videos';
 import { Youtube } from '@/types/youtube-videos-props';
 import { useContext, useState } from 'react';
@@ -10,13 +11,13 @@ export default function VideoList() {
   const { setVideos, videos } = useContext(VideosContext);
   const [hasMore, setHasMore] = useState(true);
 
-  const fetchData = () => {
+  const fetchData = async () => {
     const nextPageToken = videos?.nextPageToken;
     console.log('fetchData', nextPageToken);
 
     if (!nextPageToken) return setHasMore(false);
 
-    fetch(`/api/videos?pageToken=${nextPageToken}`)
+    await fetch(`/api/videos?pageToken=${nextPageToken}`)
       .then((res) => res.json())
       .then((data: Youtube) => {
         setVideos({
@@ -36,7 +37,8 @@ export default function VideoList() {
     );
   }
 
-  const Loader = () => <CardSkeleton />;
+  const Loader = () =>
+    Array.from({ length: 7 }).map((_, i) => <CardSkeleton key={i} />);
 
   return (
     <InfiniteScroll

@@ -1,5 +1,4 @@
 import { formatSubscribers } from '@/services/formatView';
-import Image from 'next/image';
 import Link from 'next/link';
 
 interface AuthorAndLikesProps {
@@ -24,13 +23,13 @@ export default function LinkToAuthorDescription({
       target='_blank'
       rel='noreferrer nofollow'
     >
-      <Image
+      <img
         src={thumbnail}
         alt={title + ' thumbnail'}
         width={70}
         height={70}
         className='rounded-full'
-      ></Image>
+      ></img>
       <div className='flex flex-col'>
         <h2 className='md:text-xl font-medium'>{authorName}</h2>
         <span className='text-sm'>{formatSubscribers(subscriber_count)}</span>
