@@ -90,6 +90,3 @@ export default function Card({
     </Link>
   );
 }
-
-// 2024-01-17T14:30:07Z
-// Views 1372572

@@ -1,4 +1,5 @@
 'use client';
+
 import Card from '@/components/card/card';
 import Layout from '@/components/layout';
 import CardSkeleton from '@/components/skeletons/card-skeleton';
@@ -23,6 +24,8 @@ export default function InputSearchVideo() {
       const res = await fetch(`/api/search?q=${search}`);
       const data = (await res.json()) as SearchVideoProps;
       setVideos(data);
+      console.log({ data });
+
       setPageToken(data.nextPageToken);
     })();
   }, [search]);
@@ -65,7 +68,7 @@ export default function InputSearchVideo() {
         {videos.items.map((video: any) => (
           <Card
             key={video.id}
-            id={video.id}
+            id={video.id.videoId}
             author={video.snippet.channelTitle}
             channelID={video.snippet.channelId}
             src={video.snippet.thumbnails.high.url}
