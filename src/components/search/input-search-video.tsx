@@ -3,6 +3,7 @@
 import { useRouter, useSearchParams } from 'next/navigation';
 import { FormEvent } from 'react';
 import { Input } from '../ui/input';
+import useSearch from '@/hooks/useSearch';
 
 export default function InputSearchVideo() {
   const router = useRouter();
