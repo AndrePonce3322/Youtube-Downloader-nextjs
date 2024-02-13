@@ -1,7 +1,9 @@
+let fetchCount = 0;
+
 export default async function PlaylistInfoByChannelId(req, res) {
   const { q } = req.query;
 
-  console.log('Fetch playlist')
+  console.log('Playlist', fetchCount++);
 
   const url = `https://youtube.googleapis.com/youtube/v3/playlists?part=snippet&channelId=${q}&maxResults=30&key=${process.env.YOUTUBE_API_KEY}`;
 
