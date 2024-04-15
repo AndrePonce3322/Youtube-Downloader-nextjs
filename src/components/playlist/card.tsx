@@ -28,11 +28,11 @@ export default function PlayListCard({
 
   return (
     <Link
-      className='flex gap-2 group'
+      className='flex md:flex-row flex-col gap-2 group'
       href={`/watch?v=${videoId}`}
       title={title}
     >
-      <div className='w-40 aspect-video relative' style={{ minWidth: '10rem' }}>
+      <div className='w-full md:w-40 aspect-video relative' style={{ minWidth: '10rem' }}>
         <img
           src={thumbnail}
           alt={title + ' thumbnail'}
@@ -55,7 +55,7 @@ export default function PlayListCard({
 
       </div>
 
-      <header className='flex flex-col gap-2 md:gap-1 text-xs'>
+      <header className='flex flex-col gap-1 text-xs'>
         <h3 className='line-clamp-2 md:text-base text-sm'>{title}</h3>
         <div className='flex flex-col'>
           <div className='text-xs md:text-sm text-muted-foreground flex items-center gap-1'>
@@ -65,7 +65,7 @@ export default function PlayListCard({
               className='text-white dark:text-black fill-muted-foreground'
             />
           </div>
-          <time className='text-sm text-muted-foreground'>{publishDate}</time>
+          <time className='text-xs md:text-sm text-muted-foreground'>{publishDate}</time>
         </div>
       </header>
     </Link>
