@@ -9,7 +9,6 @@ export default function RadioGroupForDialog({
   onValueChange: (e: string) => void;
 }) {
   const formats = useVideoFormats();
-  console.log(formats);
 
   const convertToMB = (length: number) => {
     if (!length) return null;
