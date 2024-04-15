@@ -52,11 +52,10 @@ export default function PlayListCard({
             {SecondsToMinutes(duration)}
           </time>
         </div>
-
       </div>
 
       <header className='flex flex-col gap-1 text-xs'>
-        <h3 className='line-clamp-2 md:text-base text-sm'>{title}</h3>
+        <h3 className='line-clamp-2 md:text-base text-sm text-wrap' style={{ wordBreak: "break-word"}}>{title}</h3>
         <div className='flex flex-col'>
           <div className='text-xs md:text-sm text-muted-foreground flex items-center gap-1'>
             <span>{author}</span>
