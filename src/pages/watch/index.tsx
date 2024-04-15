@@ -32,7 +32,7 @@ export default function Watch() {
 
       {/* Playlist */}
       <section className='w-full min-h-screen rounded-md px-2'>
-        {channelId && <PlayList channelId={channelId} />}
+        {channelId && <PlayList />}
       </section>
     </Layout>
   );

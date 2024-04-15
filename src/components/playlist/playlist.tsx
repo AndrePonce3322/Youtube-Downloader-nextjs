@@ -1,14 +1,14 @@
 'use client';
 
-import usePlaylist from '@/hooks/usePlaylist';
-import PlayListCard from './card';
-import PlayListCardSkeleton from '../skeletons/playlist-card';
+import useRelatedVideos from '@/hooks/useRelatedVideos';
 import { ListVideo } from 'lucide-react';
+import PlayListCardSkeleton from '../skeletons/playlist-card';
+import PlayListCard from './card';
 
-export default function PlayList({ channelId }: { channelId: string }) {
-  const playlist = usePlaylist({ channelId });
+export default function PlayList() {
+  const relatedVideos = useRelatedVideos();
 
-  if (!playlist?.items) {
+  if (!relatedVideos.length) {
     return (
       <div className='flex flex-col gap-3'>
         {Array.from({ length: 3 }).map((_, index) => (
@@ -18,7 +18,7 @@ export default function PlayList({ channelId }: { channelId: string }) {
     );
   }
 
-  if (playlist.items.length === 0)
+  if (relatedVideos.length === 0)
     return (
       <div className='w-full aspect-video flex items-center justify-center text-xl'>
         <span className='flex items-center gap-1 opacity-40'>
@@ -29,15 +29,16 @@ export default function PlayList({ channelId }: { channelId: string }) {
     );
 
   return (
-    <div className='flex flex-col gap-2'>
-      {playlist.items.map((item: any, index: number) => (
+    <div className='flex flex-col gap-4 border-t pt-4 md:border-t-0 md:pt-0'>
+      {relatedVideos.map((item) => (
         <PlayListCard
-          videoId={playlist.videoId[index]}
+          videoId={item.id}
           key={item.id}
-          author={item.snippet.channelTitle}
-          publishDate={item.snippet.publishedAt}
-          thumbnail={item.snippet.thumbnails.medium.url}
-          title={item.snippet.title}
+          author={item.author.name}
+          publishDate={item.published}
+          thumbnail={item.thumbnails[1].url}
+          duration={item.length_seconds}
+          title={item.title}
         />
       ))}
     </div>

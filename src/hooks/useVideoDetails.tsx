@@ -21,7 +21,7 @@ export default function useVideoDetails({ id }: { id: string }) {
       if (!data) return setVideo({ error: 'Video not found' });
 
       // Set all contexts
-      setRelatedVideos(data.relatedVideos)
+      setRelatedVideos(data.related_videos)
       setFormats(data.formats)
 
       const { videoDetails } = data;

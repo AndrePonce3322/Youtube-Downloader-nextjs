@@ -39,7 +39,7 @@ export default function DialogMobile({ open, setOpen, isDownloading, handleOnCli
         <DrawerHeader className='text-left'>
           <DialogTitle className='flex flex-col gap-8'>
             <YoutubeLogoIcon width='100px' />
-            <h3>Descargar con YouTube Downloader</h3>
+            <span>Descargar con YouTube Downloader</span>
           </DialogTitle>
           <DrawerDescription>
             Selecciona la calidad de vídeo que desees y comienza a descargar.

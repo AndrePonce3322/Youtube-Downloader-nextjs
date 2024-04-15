@@ -28,7 +28,7 @@ export default function AuthorAndLikes({
       {/* Author */}
       <Link
         href={channel_url}
-        className='flex gap-3 items-center'
+        className='flex gap-3 items-center active:bg-foreground/10 rounded'
         target='_blank'
       >
         <Avatar className='size-10 md:size-11'>

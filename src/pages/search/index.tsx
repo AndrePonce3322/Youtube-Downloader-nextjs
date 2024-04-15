@@ -65,7 +65,7 @@ export default function InputSearchVideo() {
       >
         {videos.items.map((video: any) => (
           <Card
-            key={video.id}
+            key={video.id.videoId}
             id={video.id.videoId}
             author={video.snippet.channelTitle}
             channelID={video.snippet.channelId}
