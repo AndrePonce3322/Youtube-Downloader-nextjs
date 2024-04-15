@@ -1,4 +1,4 @@
-import { DrawerDialogDemo } from './responsive-dialog';
+import { DrawerDialogDemo } from './dialog/responsive-dialog';
 
 interface DownloadButtonProps {
   videoId: string;

@@ -13,7 +13,6 @@ export default function VideoList() {
 
   const fetchData = async () => {
     const nextPageToken = videos?.nextPageToken;
-    console.log('fetchData', nextPageToken);
 
     if (!nextPageToken) return setHasMore(false);
 
