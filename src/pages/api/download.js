@@ -25,7 +25,6 @@ export default async function Downloader(req, res) {
     }).contentLength;
   });
 
-
   try {
     res.setHeader('Content-Length', length);
   } catch (error) {
