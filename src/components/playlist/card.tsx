@@ -47,8 +47,8 @@ export default function PlayListCard({
           />
         </div>
 
-        <div className="absolute bottom-1 right-2 bg-black bg-opacity-80 text-white text-xs rounded-md px-1">
-          <time className='text-sm text-muted-foreground'>
+        <div className="absolute bottom-1 right-2 bg-white dark:bg-black bg-opacity-80 text-xs rounded-md px-1">
+          <time className='text-sm text-black/80 dark:text-muted-foreground'>
             {SecondsToMinutes(duration)}
           </time>
         </div>
