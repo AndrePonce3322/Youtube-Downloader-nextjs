@@ -14,7 +14,7 @@ export const useProgress = () => {
     return () => {
       subscription.unsubscribe();
     };
-  }, [progress]);
+  }, []);
 
   return progress;
 };

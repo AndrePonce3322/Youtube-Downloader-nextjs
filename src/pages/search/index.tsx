@@ -24,7 +24,6 @@ export default function InputSearchVideo() {
       const res = await fetch(`/api/search?q=${search}`);
       const data = (await res.json()) as SearchVideoProps;
       setVideos(data);
-      console.log({ data });
 
       setPageToken(data.nextPageToken);
     })();
@@ -32,7 +31,6 @@ export default function InputSearchVideo() {
 
   const fetchMoreVideos = async () => {
     const nextPageToken = videos?.nextPageToken;
-    console.log('fetchData', nextPageToken);
 
     if (!nextPageToken) return setHasMore(false);
 

@@ -1,6 +1,6 @@
 import ytdl from 'ytdl-core';
 
-export default async function handler(req, res) {
+export default async function Downloader(req, res) {
   const requirements = req.body;
   console.log({ requirements });
   const { url, filter, quality } = requirements;
@@ -24,6 +24,7 @@ export default async function handler(req, res) {
       filter,
     }).contentLength;
   });
+
 
   try {
     res.setHeader('Content-Length', length);
