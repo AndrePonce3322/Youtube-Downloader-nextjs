@@ -14,7 +14,7 @@ export default function Layout({
       <Head>
         <title>{title || 'Youtube Downloader'}</title>
 
-        <link rel='icon' href='/icon.png' />
+        <link rel='icon' href='/favicon.png' />
 
         <meta
           name='description'

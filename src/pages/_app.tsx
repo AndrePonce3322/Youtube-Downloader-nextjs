@@ -9,10 +9,20 @@ import { Toaster } from 'sonner';
 import { Analytics } from "@vercel/analytics/react"
 import { FormatsVideoProvider } from '@/context/formats';
 import { RelatedVideosProvider } from '@/context/related-videos';
+import Head from 'next/head';
+
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
+      <Head>
+        <link
+          rel="manifest"
+          href='/manifest.json'
+          crossOrigin='anonymous'
+        />
+      </Head>
+
       <ThemeProvider attribute='class' defaultTheme='light' enableSystem>
         {/* Vercel analytics */}
         <Analytics />
