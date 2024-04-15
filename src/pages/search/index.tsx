@@ -46,7 +46,7 @@ export default function InputSearchVideo() {
 
   if (!videos?.items)
     return (
-      <div className='md:px-[20px] grid md:grid-cols-3 gap-4 my-3 pb-10'>
+      <div className='md:px-[20px] grid md:grid-cols-3 gap-4 md:my-3 pb-10'>
         <CardSkeletonList />
       </div>
     );
