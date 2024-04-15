@@ -47,11 +47,9 @@ export const download = async ({
     progress$.next(0);
     length$.next(0);
     window.URL.revokeObjectURL(blobUrl);
-    return { ok: true };
   } catch (error) {
     progress$.next(0);
     length$.next(0);
     console.error('Error:', error);
-    return { ok: false };
   }
 };

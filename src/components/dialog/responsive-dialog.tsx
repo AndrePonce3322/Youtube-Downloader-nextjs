@@ -44,14 +44,12 @@ export function DrawerDialogDemo({
       format: downloadType.format,
     });
 
-    res.then((response) => {
-      if (response.ok) {
-        confetti({
-          particleCount: 800,
-          spread: 100,
-          origin: { y: 0.6 },
-        });
-      }
+    res.then(() => {
+      confetti({
+        particleCount: 800,
+        spread: 100,
+        origin: { y: 0.6 },
+      });
 
       setIsDownloading(false)
     });
