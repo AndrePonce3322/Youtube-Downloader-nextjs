@@ -29,7 +29,7 @@ export default function PlayList() {
     );
 
   return (
-    <div className='flex flex-col gap-4 border-t pt-4 md:border-t-0 md:pt-0'>
+    <div className='flex flex-col gap-8 md:gap-4 border-t pt-4 md:border-t-0 md:pt-0'>
       {relatedVideos.map((item) => (
         <PlayListCard
           videoId={item.id}

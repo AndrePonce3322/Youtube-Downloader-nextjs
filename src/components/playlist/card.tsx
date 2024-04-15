@@ -32,7 +32,7 @@ export default function PlayListCard({
       href={`/watch?v=${videoId}`}
       title={title}
     >
-      <div className='w-full md:w-40 aspect-video relative' style={{ minWidth: '10rem' }}>
+      <div className='w-full md:w-40 aspect-video relative rounded-md overflow-hidden' style={{ minWidth: '10rem' }}>
         <img
           src={thumbnail}
           alt={title + ' thumbnail'}
@@ -54,7 +54,7 @@ export default function PlayListCard({
         </div>
       </div>
 
-      <header className='flex flex-col gap-1 text-xs'>
+      <header className='flex flex-col md:gap-1 text-xs'>
         <h3 className='line-clamp-2 md:text-base text-sm text-wrap' style={{ wordBreak: "break-word"}}>{title}</h3>
         <div className='flex flex-col'>
           <div className='text-xs md:text-sm text-muted-foreground flex items-center gap-1'>
