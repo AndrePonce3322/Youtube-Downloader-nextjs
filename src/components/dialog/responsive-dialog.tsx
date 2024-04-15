@@ -60,9 +60,8 @@ export function DrawerDialogDemo({
       loading: `Descargando`,
       description: `${musicName}.${downloadType.format}`,
       success: 'Descarga completada',
-      error: 'El archivo es muy pesado. Intenta con una calidad más baja.',
+      error: 'No se ha podido descargar el archivo. Inténtalo de nuevo.',
     });
-
   };
 
   const onValueChange = (
