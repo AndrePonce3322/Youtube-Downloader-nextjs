@@ -29,7 +29,7 @@ export default async function getInfoVideo(req, res) {
     const { videoDetails, related_videos } = info;
 
     try {
-      for (let i = 0; i < AVAILABLE_TYPING.length; i++) {
+      for (let i = 0; i <= AVAILABLE_TYPING.length; i++) {
         const { filter, quality } = AVAILABLE_TYPING[i];
 
         const fileLength = ytdl.chooseFormat(info.formats, {

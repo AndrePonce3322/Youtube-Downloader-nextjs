@@ -44,12 +44,14 @@ export function DrawerDialogDemo({
       format: downloadType.format,
     });
 
-    res.then(() => {
-      confetti({
-        particleCount: 800,
-        spread: 100,
-        origin: { y: 0.6 },
-      });
+    res.then((response) => {
+      if (response.ok) {
+        confetti({
+          particleCount: 800,
+          spread: 100,
+          origin: { y: 0.6 },
+        });
+      }
 
       setIsDownloading(false)
     });
@@ -58,7 +60,7 @@ export function DrawerDialogDemo({
       loading: `Descargando`,
       description: `${musicName}.${downloadType.format}`,
       success: 'Descarga completada',
-      error: 'Error al descargar',
+      error: 'El archivo es muy pesado. Intenta con una calidad más baja.',
     });
 
   };
